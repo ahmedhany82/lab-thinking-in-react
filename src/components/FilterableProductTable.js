@@ -23,7 +23,12 @@ export default class FilterableProductTable extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{    
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'}}
+                >
                 <h1>IronStore</h1>
                 <SearchBar query={this.state.query} stocked={this.state.stocked} setQuery={this.setQuery} setStocked={this.setStocked}/>
                 <ProductTable products={this.props.products} query={this.state.query} stocked={this.state.stocked}/>

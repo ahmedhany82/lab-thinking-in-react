@@ -13,12 +13,12 @@ export default class SearchBar extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Search</h1>
+            <div style={{width: '100%'}}>
+                <h2>Search</h2>
                 <form onSubmit={this.handleSubmit} style={{width:'100%', marginBottom: '50px'}}>
                     <div>
                         <label htmlFor="search"></label>
-                        <input style={{width:'90%', height: '25px', marginLeft: '20px'}}
+                        <input style={{width:'90%', height: '25px', marginBottom: '20px'}}
                         type="text"
                         name="search"
                         id="search"
@@ -27,7 +27,6 @@ export default class SearchBar extends Component {
                         />
                     </div>
                     <div>
-                        <label htmlFor="inStock" style={{marginLeft: '20px', marginRight: '5px'}}>Only show products on stock</label>
                         <input
                             type="checkbox"
                             name="inStock"
@@ -35,6 +34,7 @@ export default class SearchBar extends Component {
                             checked={this.props.inStock}
                             onChange={this.handleCheckBox}
                         />
+                        <label htmlFor="inStock" style={{marginTop: '20px'}}>Only show products on stock</label>
                     </div>
                 </form>
             </div>
