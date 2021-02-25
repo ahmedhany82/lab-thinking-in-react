@@ -10,7 +10,7 @@ export default class ProductTable extends Component {
             return (this.props.stocked? (product.stocked) : true)
         }).map(product => {
             return (
-                <ProductRow product={product} />
+                <ProductRow key={product.id} product={product} />
               )  
         })
     
