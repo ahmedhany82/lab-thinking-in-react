@@ -17,11 +17,15 @@ export default class ProductTable extends Component {
         return (
             <div>
                 <table>
-                <tr style={{tableLayout: 'fixed', display: 'flex', justifyContent: 'space-between', width: '500px', textAlign: 'left'}}>
-                    <th style={{backgroundColor: 'lightblue', textAlign: 'center',  width: '250px'}}>Name</th>
-                    <th style={{backgroundColor: 'lightblue', textAlign: 'center',  width: '250px'}}>Price</th>
-                </tr>
+                <thead>
+                    <tr style={{tableLayout: 'fixed', display: 'flex', justifyContent: 'space-between', width: '500px', textAlign: 'left'}}>
+                        <th style={{backgroundColor: 'lightblue', textAlign: 'center',  width: '250px'}}>Name</th>
+                        <th style={{backgroundColor: 'lightblue', textAlign: 'center',  width: '250px'}}>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {list}
+                </tbody>
                 </table>
             </div>
         )
