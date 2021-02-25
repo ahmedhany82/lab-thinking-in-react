@@ -9,15 +9,11 @@ export default class FilterableProductTable extends Component {
         stocked: false
     };
     
-    setQuery = query => {
+    setFilter = event => {
+        const name = event.target.name;
+        let value = (event.target.type === 'checkbox')? event.target.checked: event.target.value;
         this.setState({
-          query: query
-        })
-    }
-
-    setStocked = status => {
-        this.setState({
-            stocked: status
+            [name]: value
         })
     }
 
@@ -30,7 +26,7 @@ export default class FilterableProductTable extends Component {
                 alignItems: 'center'}}
                 >
                 <h1>IronStore</h1>
-                <SearchBar query={this.state.query} stocked={this.state.stocked} setQuery={this.setQuery} setStocked={this.setStocked}/>
+                <SearchBar query={this.state.query} stocked={this.state.stocked} setFilter={this.setFilter}/>
                 <ProductTable products={this.props.products} query={this.state.query} stocked={this.state.stocked}/>
             </div>
         )
