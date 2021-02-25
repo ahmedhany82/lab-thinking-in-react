@@ -5,9 +5,8 @@ export default class ProductTable extends Component {
     render() {
 
         const list = this.props.products.filter(product => {
-            return (this.props.query === '' ? true: (product.name.toLowerCase().includes(this.props.query.toLowerCase())))
-        }).filter(product => {
-            return (this.props.stocked? (product.stocked) : true)
+            return ( (this.props.query === '' ? true: (product.name.toLowerCase().includes(this.props.query.toLowerCase())))
+                        && (this.props.stocked? (product.stocked) : true) )
         }).map(product => {
             return (
                 <ProductRow key={product.id} product={product} />
@@ -18,7 +17,7 @@ export default class ProductTable extends Component {
             <div>
                 <table>
                 <thead>
-                    <tr style={{tableLayout: 'fixed', display: 'flex', justifyContent: 'space-between', width: '500px', textAlign: 'left'}}>
+                    <tr style={{tableLayout: 'fixed', display: 'flex', justifyContent: 'space-between', width: '500px', height: '25px', textAlign: 'left'}}>
                         <th style={{backgroundColor: 'lightblue', textAlign: 'center',  width: '250px'}}>Name</th>
                         <th style={{backgroundColor: 'lightblue', textAlign: 'center',  width: '250px'}}>Price</th>
                     </tr>
